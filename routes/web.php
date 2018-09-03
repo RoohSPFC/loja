@@ -21,6 +21,10 @@
 * match(['get', 'post'], 'rota', 'function'() {})
 */
 Route::prefix('produto')->group(function () {
+    Route::get('/create/{id}', function () {
+        return view('Produto.create');
+    });
+
     Route::get('/', function () {
 
         $produtos = [
@@ -62,9 +66,15 @@ Route::prefix('produto')->group(function () {
         return view ('Produto.index', compact('produtos'));
     });
 
-    Route::get('/create/{id}', function () {
-        return view('Produto.create');
+    Route::prefix('marca')->group(function () {
+        Route::get('/create/{id}', function () {
+            return view('Produto.Marca.create');
+        });
+        Route::get('/', function () {
+            return view('Produto.Marca.index');
+        });
     });
+
 
 
 });
