@@ -1,7 +1,7 @@
 @extends('template.layout')
 
 @section('content')
-<h1>Cadastro de Produto</h1>
+<h1>Listagem de Produto</h1>
 <a class="btn btn-success" href="/produto/create/0">Adicionar produto</a>
 <hr>
 
